@@ -1,0 +1,32 @@
+--Create a grocery store database
+CREATE TABLE medical_supplies (ID INTEGER PRIMARY KEY, name TEXT, manufacturer TEXT,quantity TEXT, price INTEGER);
+
+INSERT INTO medical_supplies VALUES
+(1, "NEEDLES", "MCKESSON", 10000, 1.00);
+INSERT INTO medical_supplies VALUES (2, "GLOVES", "J&J", 20000, 5.00);
+INSERT INTO medical_supplies VALUES (3, "TAPE", "3M", 500, 3.00);
+INSERT INTO medical_supplies VALUES (4, "HATS", "MCKESSON", 3000, 2.00);
+INSERT INTO medical_supplies VALUES (5, "GOWNS", "CARDINAL", 60000, 4.00);
+INSERT INTO medical_supplies VALUES (6, "TISSUE", "PFIZER", 2000, 5.00);
+INSERT INTO medical_supplies VALUES (7, "SOCKS", "NIKE", 4000, 6.00);
+INSERT INTO medical_supplies VALUES (8, "WIPES", "MCKESSON", 800, 13.00);
+INSERT INTO medical_supplies VALUES (9, "SOAP", "J&J", 300, 2.00);
+INSERT INTO medical_supplies VALUES (10, "LOTION", "P&G", 2000, 4.00);
+INSERT INTO medical_supplies VALUES (11, "COTTON BALLS", "PFIZER", 10000, 3.00);
+INSERT INTO medical_supplies VALUES (12, "BED PANS", "3M", 400, 10.00);
+INSERT INTO medical_supplies VALUES (13, "BEDS", "CARDINAL", 300, 500.00);
+INSERT INTO medical_supplies VALUES (14, "STETHOSCOPE", "3M", 40, 100.00);
+INSERT INTO medical_supplies VALUES (15, "PENS", "BIC",10000, 6.00);
+
+--display the database ordered by price.
+SELECT * FROM medical_supplies where "price" >=4
+order by "price" asc;
+
+--what is the avg price of items?
+Select avg(price) from "medical_supplies";
+
+--what are the most 5 expensive items?
+SELECT name, price, quantity
+FROM medical_supplies
+order by price desc
+limit 5; 
