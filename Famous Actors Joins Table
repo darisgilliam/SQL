@@ -1,0 +1,40 @@
+**Created actors table**
+/* Create table about the people and what they do here */
+CREATE TABLE stars (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT);
+INSERT INTO stars (name) VALUES ("Chris Evans");
+INSERT INTO stars (name) VALUES ("Matt Damon");
+INSERT INTO stars (name) VALUES ("Ryan Reynolds");
+INSERT INTO stars (name) VALUES ("Zendaya");
+INSERT INTO stars (name) VALUES ("Robert Downey Jr");
+INSERT INTO stars (name) VALUES ("Scarlett Johannson");
+
+
+**Created movies table**
+CREATE TABLE movies (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+star_id INTEGER,
+title TEXT,
+date TEXT);
+
+**Inserting data into movies table**
+INSERT into movies (star_id, title, date)
+VALUES (1, "Captain America", "2011");
+INSERT into movies (star_id, title, date)
+VALUES (2, "Martian", "2015");
+INSERT into movies (star_id, title, date)
+VALUES (3, "Red Notice", "2021");
+INSERT into movies (star_id, title, date)
+VALUES (4, "Spider-Man", "2017");
+INSERT into movies (star_id, title, date)
+VALUES (5, "Iron Man", "2008");
+INSERT into movies (star_id, title, date)
+VALUES (6, "Black Widow", "2021");
+
+
+**Joining the actors names to the movies**
+SELECT stars.name, movies.title, movies.date
+FROM stars
+LEFT OUTER JOIN movies
+ON stars.id = movies.star_id
